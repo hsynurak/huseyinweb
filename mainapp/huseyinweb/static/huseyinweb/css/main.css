@@ -1,12 +1,62 @@
 @import url("https://fonts.googleapis.com/css?family=Baloo+Paaji|Open+Sans:300,300i,400,400i,600,600i,700,700i");
 
+*{
+     font-family: 'Baloo Paaji', cursive;
+     background-color: #EAF1F7;
+     color: #203246;
+}
+
 ._navbar{
      background-color: #EAF1F7;
+     height: 20vh;
 }
+
 
 .nav-link{
      color: #334F70
 }
+
+
+.nav_header{
+     font-family: 'Baloo Paaji', cursive;
+     font-size: 20px;
+}
+
+.navigation{
+     padding-top: 3%;
+}
+
+
+
+@media (max-width: 767px) {
+     nav {
+          flex-direction: column;
+     }
+
+     .navigation, .navbar_logo{
+          flex-direction: column;
+     }
+
+     .nav_link{
+          text-align: center;
+          border-top: 1px solid #334F70;
+          border-top: 1px solid rgba(51, 79, 112, 0.2);
+     }
+
+
+
+     .nav_header{
+          margin-left: 0;
+          font-size: 20px;
+          max-width: 100%;
+     }
+
+     .menu{
+          flex-direction: column;
+          text-align: center;
+     }
+}
+
 
 .info{
      font-family: serif;
@@ -39,8 +89,8 @@
 .upper-title{
      font-size: calc(30px + (60 - 30) * ((100vw - 300px) / (1300 - 300)));
      font-weight: 500;
-     color: #444;
-     margin-bottom: 5px;
+     color: #203246;
+     margin-bottom: 2%;
      position: relative;
      display: block;
 }
@@ -52,6 +102,7 @@
      display: block;
 }
 
+
 .header-subtitle{
      font-size: calc(10px + (22 - 10) * ((100vw - 300px) / (1300 - 300)));
      letter-spacing: calc(1px + (7 - 1) * ((100vw - 300px) / (1300 - 300)));
@@ -62,7 +113,6 @@
 
 .header-content {
      font-family: serif;
-     margin-top: 20px;
      -webkit-box-flex: 1;
      -webkit-flex-grow: 1;
          -ms-flex-positive: 1;
@@ -72,20 +122,51 @@
      font-weight: 500;
      color: #444;
      display: block;
-     letter-spacing: calc(1px + (7 - 1) * ((50vw - 200px) / (1300 - 300)));
+     letter-spacing: calc(1px + (5 - 1) * ((50vw - 200px) / (1300 - 300)));
      opacity: .8;
-     margin-top: -10px;
      margin-bottom: 20px;
      position: relative;
-     margin-top: 20px;
      border-radius: 20px;
      padding: 8px 15px;
 }
 
+.header{
+     height: 80vh;
+     position: relative;
+}
+
+.header-title{
+     text-align: center;
+
+}
+
+.header_text{
+     display: block;
+     text-align: center;
+     font-size: 25px;
+     margin-top: 10%;
+}
+
+@media (max-width: 940px) {
+
+     .about-image, .about{
+          margin: auto;
+     }
+
+     .about-caption{
+          text-align: center;
+          margin: auto;
+     }
+}
+
+.about{
+     height: 85vh;
+}
+
 .about-image{
-     width: 100%;
-     margin-bottom: 15px;
+     width: 80%;
      border-radius: 50%;
+     align-items: center;
 }
 
 
@@ -99,20 +180,30 @@
      -webkit-flex-grow: 1;
          -ms-flex-positive: 1;
              flex-grow: 1;
+     text-align: center;
+
+}
+
+.why_me{
+     text-align: center;
+     margin-right: 10%;
+     margin-left: 10%;
+     margin-bottom: 10%;
+     height: 25vh;
 }
 
 .why_me_title, .projects_title {
      text-align: center;
      margin-bottom: 15px;
-     margin-top: 15px;
 }
 
 .why_me_text{
-     text-align: left;
      margin-left: 15px;
      margin-right: 15px;
      font-size: 17px;
 }
+
+
 
 .skill_title{
      text-align: center;
@@ -121,16 +212,30 @@
 }
 
 .skill_text{
-     text-align: left;
+     text-align: center;
      margin-left: 15px;
      margin-right: 15px;
      font-size: 17px;
 }
 
+.skill_cards{
+     margin-top: 5%;
+}
+
+.skill_details{
+     height: 100vh;
+}
+
+.projects{
+     margin-top: 0;
+     height: 120vh;
+}
+
 .project_image{
      width: 50%;
-     margin-bottom: 15px;
+     margin-top: 8%;
      margin-left: 45%;
+     border-radius: 15%;
 }
 
 .project_text{
@@ -138,16 +243,85 @@
      width: 70%;
 }
 
+.project_card_title{
+     text-align: left;
+     padding-top: 7%;
+}
+
+@media (max-width: 767px) {
+     .project_image{
+          align-items: center;
+     }
+
+     .project_text{
+          text-align: center;
+          margin: auto;
+     }
+
+     .project_card_title{
+          text-align: center;
+     }
+
+     .project_detail_button{
+          margin-left: 47%;
+     }
+}
+
 .contact{
-     margin-top: 250px;
+     height: 85vh;
+     padding-top: 10%;
 }
 
 .contact_header_title, .contact_header_subtitle, .contact_header_text{
      text-align: center;
-     margin-bottom: 15px;
-     margin-top: 20px;
 }
 
 .contact_main{
-     margin-top: 100px;
+     padding-top: 10%;
+}
+
+.footer{
+     height: 15vh;
+}
+
+
+@media (max-width: 767px) {
+     ._navbar{
+          height: 70vh;
+     }
+     .header{
+          height: 65vh;
+     }
+
+     .about{
+          height: 85vh;
+     }
+
+     .skills{
+          height: 120vh;
+     }
+
+     .why_me{
+          height: 45vh;
+     }
+
+     .skill_cards_up{
+          height: 85vh;
+     }
+
+     .projects{
+          height: 145vh;
+     }
+
+     .project_image{
+          width: 20%;
+     }
+
+     .project_text{
+          width: 80%;
+     }
+
+     .contact{
+          height: 70vh;
+     }
 }

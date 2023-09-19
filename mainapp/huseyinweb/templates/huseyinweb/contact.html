@@ -1,0 +1,40 @@
+{% extends "second_base.html" %}
+{% load static %}
+{% block css_files %}
+     <link rel="stylesheet" href="{% static "huseyinweb/css/main.css" %}">
+     <link rel="stylesheet" href="{% static "huseyinweb/css/style.css" %}">
+{% endblock  %}
+{% block content %}
+
+<div class="contact">
+     <div class="contact_header">
+          <h1 class="contact_header_title">İletişim</h1>
+          <h3 class="contact_header_subtitle">Daha Detaylı Bilgi Almak İçin İletişime Geç</h3>
+          <p class="contact_header_text">Projelerim, stajlarım, gelişimim hakkında daha detaylı bilgi almak veya bu yolda bana tavsiyelerini iletmen için seni bekliyorum.</p>
+     </div>
+     <div class="contact_main row">
+          <form method="POST" action="contact" class="contact_form col-md-6 m-auto" novalidate>
+               {% csrf_token %}
+               <div class="form_row">
+                    <div class="form-group input100">
+                         <input name="name" type="text" size="50" class="form-control" placeholder="İsim" required>                 
+                    </div>
+                    <div class="form-group input100">
+                         <input name="email" type="email" class="form-control" placeholder="Mail Adresi"requried>                 
+                    </div>
+                    <div class="form-group input100">
+                         <input name="message" id="comment" type="text" class="form-control" placeholder="Yorum veya tavsiyeleriniz">
+                    </div>
+                    <div class="form-group  mt-3">
+                         <input type="submit" value="Mesajını Gönder" class="btn btn-outline-primary rounded contact_button">                  
+                    </div>
+               </div>
+          </form>
+
+     </div>
+</div>
+
+{% endblock  %}
+{% block js_files %}
+
+{% endblock  %}

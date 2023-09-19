@@ -31,10 +31,12 @@
                <div class="about-caption col-md-6 my-auto">
                     <h2 class="section-title mb-3">Ben kimim?</h2>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae aliquid ad provident aut fuga animi soluta quae eos non cupiditate voluptates dolorem, doloremque quos dicta quibusdam impedit iure nemo a iste 
-                        <br>culpa! Quasi quibusdam hic recusandae delectus velit officiis explicabo voluptatibus! Nemo esse similique, voluptates labore distinctio, placeat explicabo facilis molestias, blanditiis culpa iusto voluptatem ratione eligendi a, quia temporibus velit vero ipsa sint ex voluptatum expedita aliquid! Debitis, nam!              
-                    </p>
-                    <button class="btn-rounded btn btn-outline-primary mt-4">Download CV</button>
+                         Üsküdar Üniversitesinde tam burslu olarak İngilizce Bilgisayar Mühendisliği bölümünde 3,4 ortalama ile eğitimimin 3. sınıfına devam etmekteyim.
+                         Derslerde öğrendiklerimi uygulamak ve kendimi geliştirmek için projeler geliştirmekteyim. Bu projeleri geliştirirken kullandığım teknolojileri ve projelerimin detaylarını bu web sitesinde paylaşmaktayım.
+                         Hakkımda daha detaylı bilgi almak için aşağıdaki butonları kullanarak CV'mi indirebilir veya GitHub hesabıma giderek projelerimi inceleyebilirsiniz.
+                    </p>                   
+                    <button class="btn-rounded btn btn-outline-primary mt-4">CV</button>
+                    <button class="btn-rounded btn btn-outline-primary mt-4"><a href="https://github.com/hsynurak">GitHub</a></button>
                </div>   
                <div class="col-md-1"></div>
           </div>
@@ -43,27 +45,25 @@
      <section class="skills" id="second_section">
           <div class="why_me">
               <h2 class="why_me_title">Neden Ben?</h2>
-               <p class="why_me_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum dolorem, totam inventore eveniet debitis maxime incidunt! Error quidem neque doloribus sunt vel maiores est facere dolor doloremque sit quia dicta, officiis deserunt enim a voluptate saepe animi debitis aperiam provident ad! Cupiditate non, odit doloremque ea porro maiores debitis quia.Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, necessitatibus voluptas sint ex laboriosam deserunt blanditiis aut harum iure alias provident sunt tenetur, at accusamus voluptatem eaque unde voluptate magni?</p>
+               <p class="why_me_text">
+                    Ekip ve bireysel çalışmalarda bulunarak, sorumluluk almayı ve aldığım sorumluluklarımı yerine getirme konusunda başarılıyımdır.
+                    <br>
+                    Özellikle ekip çalışmalarının vazgeçilmez bir parçası olan iletişim konusunda sorun yaşamam ve tüm ekip arkadaşlarımla uyum içinde çalışırım.
+                    <br>
+                    Karşıma çıkan her türlü problem için çözüm odaklı düşünerek, en verimli ve doğru çözüme ulaşmaya çalışırım.
+                    <br>
+                    Yeni teknolojileri ve aktif olarak kullanımda bulunan teknolojilerin gelişimlerini takip ederek kendimi elimden geldiğince güncel tutarım.
+               </p>
           </div>
           <div class="skill_details">
                <h2 class="why_me_title">Yetenekler</h2>
                <div class="skill_cards_up">
+                    {% for skill in skills %}
                     <div class=" skill_cards">
-                         <h3 class="skill_title">Yazılım</h3>
-                         <p class="skill_text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis, et.</p>
+                         <h3 class="skill_title">{{skill.title}}</h3>
+                         <p class="skill_text">{{skill.description}}</p>
                     </div>
-                    <div class=" skill_cards">
-                         <h3 class="skill_title">Yazılım</h3>
-                         <p class="skill_text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis, et.</p>
-                    </div>
-                    <div class=" skill_cards">
-                         <h3 class="skill_title">Yazılım</h3>
-                         <p class="skill_text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis, et.</p>
-                    </div>
-                    <div class=" skill_cards">
-                         <h3 class="skill_title">Yazılım</h3>
-                         <p class="skill_text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis, et.</p>
-                    </div>
+                    {% endfor %}
                </div>
 
           </div>
@@ -71,39 +71,21 @@
 
      <section class="projects" id="third_section">
           <h1 class="projects_title">Projeler</h1>
-          <div class="row project_card">
-               <div class="project_card_header col-md-4">
-                    <img class="project_image" src="{% static "huseyinweb/img/profile.jpeg" %}" alt="">
+          {% for project in projects %}
+               <div class="row project_card">
+                    <div class="project_card_header col-md-4">
+                         <img class="project_image" src="{{project.image.url}}" alt="">
+                    </div>
+                    <div class="project_card_body col-md-8 my-auto">
+                         <h4 class="project_card_title">{{project.title}}</h4>
+                         <p class="project_text">
+                              {{project.description}}
+                         </p>
+                         <button class="project_detail_button btn-rounded btn btn-outline-primary mt-4"><a href="#">Detay</a></button>
+                    </div>
                </div>
-               <div class="project_card_body col-md-8 my-auto">
-                    <h4 class="project_card_title">Proje 1</h4>
-                    <p class="project_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa odit temporibus magni assumenda beatae nostrum distinctio repellat ratione est, architecto expedita alias amet aperiam a laborum reprehenderit aut itaque quia repudiandae consequuntur eligendi eaque at. Dolor maiores, quaerat hic, necessitatibus quibusdam totam porro eligendi nulla veritatis ratione perspiciatis! Sed, facilis?</p>
-                    <button class="project_detail_button btn-rounded btn btn-outline-primary mt-4"><a href="#">Detay</a></button>
-               </div>
-               <div class="project_button">
-                    
-               </div>
-          </div>
-          <div class="row project_card">
-               <div class="project_card_header col-md-4">
-                    <img class="project_image" src="{% static "huseyinweb/img/profile.jpeg" %}" alt="">
-               </div>
-               <div class="project_card_body col-md-8 my-auto">
-                    <h4 class="project_card_title">Proje 1</h4>
-                    <p class="project_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa odit temporibus magni assumenda beatae nostrum distinctio repellat ratione est, architecto expedita alias amet aperiam a laborum reprehenderit aut itaque quia repudiandae consequuntur eligendi eaque at. Dolor maiores, quaerat hic, necessitatibus quibusdam totam porro eligendi nulla veritatis ratione perspiciatis! Sed, facilis?</p>
-                    <button class="project_detail_button btn-rounded btn btn-outline-primary mt-4"><a href="#">Detay</a></button>
-               </div>
-          </div>
-          <div class="row project_card">
-               <div class="project_card_header col-md-4">
-                    <img class="project_image" src="{% static "huseyinweb/img/profile.jpeg" %}" alt="">
-               </div>
-               <div class="project_card_body col-md-8 my-auto">
-                    <h4 class="project_card_title">Proje 1</h4>
-                    <p class="project_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa odit temporibus magni assumenda beatae nostrum distinctio repellat ratione est, architecto expedita alias amet aperiam a laborum reprehenderit aut itaque quia repudiandae consequuntur eligendi eaque at. Dolor maiores, quaerat hic, necessitatibus quibusdam totam porro eligendi nulla veritatis ratione perspiciatis! Sed, facilis?</p>
-                    <button class="project_detail_button btn-rounded btn btn-outline-primary mt-4"><a href="#">Detay</a></button>
-               </div>
-          </div>
+          {% endfor %}
+
      </section>
 
      <section class="experience" id="forth_section">
@@ -111,53 +93,23 @@
           </div>
      </section>
 
-     <section class="contact ">
+     <section class="contact " id="fifth_section">
           <div class="contact_header">
                <h1 class="contact_header_title">İletişim</h1>
                <h3 class="contact_header_subtitle">Daha Detaylı Bilgi Almak İçin İletişime Geç</h3>
                <p class="contact_header_text">Projelerim, stajlarım, gelişimim hakkında daha detaylı bilgi almak veya bu yolda bana tavsiyelerini iletmen için seni bekliyorum.</p>
           </div>
-          <div class="contact_main row">
-               <!--
-               <div class="col-md-4">
-                    <ul class="social_medias">
-                         <li class="social_medias_item">
-                              <a href="#">Instagram</a>
-                         </li>
-                         <li class="social_medias_item">
-                              <a href="#">Linkedin</a>
-                         </li>
-                         <li class="social_medias_item">
-                              <a href="#">Twitter</a>
-                         </li>
-                         <li class="social_medias_item">
-                              <span>Telefon Numarası</span>
-                         </li>
-                         <li class="social_medias_item">
-                              <a href="#">Mail</a>
-                         </li>
-                    </ul>
-               </div>
-               -->
-                    <form action="" class="contact_form col-md-6 m-auto">
-                         <div class="form_row">
-                              <div class="row">
-                                   <div class="form-group col-md-6">
-                                        <input type="text" size="50" class="form-control" placeholder="İsim" required>                 
-                                   </div>
-                                   <div class="form-group col-md-6">
-                                        <input type="email" class="form-control" placeholder="Mail Adresi"requried>                 
-                                   </div>
-                              </div>
-                              <div class="form-group ">
-                                   <textarea name="comment" id="comment" rows="6"   class="form-control" placeholder="Yorum veya tavsiyeleriniz"></textarea>
-                              </div>
-                              <div class="form-group  mt-3">
-                                   <input type="submit" value="Mesajını Gönder" class="btn btn-outline-primary rounded">                  
-                              </div>
-                         </div>
-                    </form>
+
+          <div class="row pt-5">
+               <div class="col-md-5"></div>
+               <button type="button" class="col-md-2 btn btn-outline-primary"><a href="contact">Mesaj gönder</a></button>
+               <div class="col-md-5"></div>
           </div>
      </section>
+
+
+{% endblock  %}
+
+{% block js_files %}
 
 {% endblock  %}

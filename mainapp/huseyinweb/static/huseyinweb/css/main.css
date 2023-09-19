@@ -2,8 +2,11 @@
 
 *{
      font-family: 'Baloo Paaji', cursive;
-     background-color: #EAF1F7;
      color: #203246;
+}
+
+.header, .about, .skills, .projects, .experience, .contact, .footer{
+     background-color: #EAF1F7;
 }
 
 ._navbar{
@@ -24,6 +27,14 @@
 
 .navigation{
      padding-top: 3%;
+}
+
+.menu{
+     overflow: hidden;
+     top: 0;
+     width: auto;
+     z-index: 1;
+     background-color: #93a8c0;
 }
 
 
@@ -133,6 +144,7 @@
 .header{
      height: 80vh;
      position: relative;
+     padding-top: 8%;
 }
 
 .header-title{
@@ -144,7 +156,7 @@
      display: block;
      text-align: center;
      font-size: 25px;
-     margin-top: 10%;
+     margin-top: 8%;
 }
 
 @media (max-width: 940px) {
@@ -285,32 +297,33 @@
 }
 
 
+
 @media (max-width: 767px) {
      ._navbar{
           height: 70vh;
      }
      .header{
-          height: 65vh;
+          height: 90vh;
      }
 
      .about{
-          height: 85vh;
+          height: 100vh;
      }
 
      .skills{
-          height: 120vh;
+          height: 200vh;
      }
 
      .why_me{
-          height: 45vh;
+          height: 100vh;
      }
 
      .skill_cards_up{
-          height: 85vh;
+          height: 100vh;
      }
 
      .projects{
-          height: 145vh;
+          height: 200vh;
      }
 
      .project_image{
@@ -322,6 +335,7 @@
      }
 
      .contact{
-          height: 70vh;
+          height: 90vh;
      }
 }
+

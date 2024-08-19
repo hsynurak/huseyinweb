@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -25,7 +26,10 @@ SECRET_KEY = "django-insecure-9fzowhi8c+^h&dz_=kesv&nsdxgg@)a)wrsanbn=1$ncr8&9$i
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1',    
+]
 
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
@@ -119,7 +123,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = "static/"
+STATIC_URL = '/static/'
+
+# Geliştirme ortamında statik dosyaların bulunduğu dizinler
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
+
+# Üretim ortamında collectstatic komutuyla dosyaların toplandığı dizin
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
 
